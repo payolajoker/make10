@@ -51,6 +51,7 @@ h1 {
     font-weight: 700;
     letter-spacing: -0.05em;
     background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-color) 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 20px var(--accent-glow));
@@ -298,4 +299,108 @@ main {
     color: var(--accent-color);
     margin-bottom: 1rem;
     display: block;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    #app {
+        padding: 1rem;
+        gap: 1rem;
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    /* Game Board & Tokens */
+    #game-board {
+        gap: 2px;
+        min-height: 120px;
+    }
+
+    .card {
+        min-width: 40px;
+        height: 60px;
+        font-size: 1.5rem;
+        padding: 0.25rem;
+        margin: 2px;
+        border-radius: 8px;
+    }
+
+    .token-op {
+        width: 32px;
+        height: 40px;
+        font-size: 1.2rem;
+        margin: 0 1px;
+        border-radius: 6px;
+    }
+
+    /* Drop Zone */
+    .drop-zone {
+        width: 15px;
+        height: 60px;
+        margin: 0 -2px;
+    }
+
+    .drop-zone.drag-over {
+        width: 40px;
+        margin: 0 2px;
+    }
+
+    .drop-zone.drag-over::after {
+        font-size: 1rem;
+    }
+
+    /* Palette */
+    #operator-palette {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+        padding: 0.5rem;
+        width: 100%;
+        margin-bottom: 2rem;
+        justify-items: center;
+    }
+
+    .palette-item {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        font-size: 2.5rem;
+        border-radius: 8px;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    /* Controls */
+    #controls {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Modal */
+    .modal-content {
+        min-width: 90%;
+        padding: 2rem;
+        margin: 1rem;
+    }
+
+    #final-expression .katex {
+        font-size: 1.5rem;
+    }
 }
